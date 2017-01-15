@@ -6,51 +6,59 @@
 <link rel="stylesheet" type="text/css" href="css/Style.css"  />
 <script src="js/jquery.js"></script>
 <script>
-var productos = new Array("img/minis/afrodita.png",
-"img/minis/arpia.jpg",
-"img/minis/basilisco.jpg",
-"img/minis/caballo.jpg",
-"img/minis/centauro.jpg",
-"img/minis/fenix.jpg",
-"img/minis/gea.jpg",
-"img/minis/grifo.png",
-"img/minis/hidra.gif",
-"img/minis/kraken.jpg",
-"img/minis/medusa.png",
-"img/minis/minotauro.jpg",
-"img/minis/pegaso.jpg",
-"img/minis/poseidon.jpg",
-"img/minis/quimera.jpg",
-"img/minis/satiro.jpg",
-"img/minis/unicornio.jpg"
+var productos = new Array(
+    "img/minis/afrodita.png",
+    "img/minis/arpia.jpg",
+    "img/minis/basilisco.jpg",
+    "img/minis/caballo.jpg",
+    "img/minis/centauro.jpg",
+    "img/minis/fenix.jpg",
+    "img/minis/gea.jpg",
+    "img/minis/grifo.png",
+    "img/minis/hidra.gif",
+    "img/minis/kraken.jpg",
+    "img/minis/medusa.png",
+    "img/minis/minotauro.jpg",
+    "img/minis/pegaso.jpg",
+    "img/minis/poseidon.jpg",
+    "img/minis/quimera.jpg",
+    "img/minis/satiro.jpg",
+    "img/minis/unicornio.jpg"
 );
 var t="";
 window.onload=function(){
 	//Cargar las imágenes en las divisiones
-        $(".Brand").each(function(i,elemento){
-            $(this).html(i);
-            $(".Brand").width(50).height(50);
+    $.each(productos,function(i,elemento){
+        //$("#foo0").append("<img src="+ elemento+">" );
+        $(".Brand").children().replaceWith("<img src="+ elemento+">" );
+        //var htmlString =  $(this).html();
+
+        $(".Brand").width(60).height(25);
     	});
 	//Crear un efecto hover
 	$(".Brand").hover(function(){
 		$(this).css("opacity", 0.5);
-	},
-	function(){
+    console.log("this", this);
+	});
+	$(".Brand").rollover(function(){
 		$(this).css("opacity", 1);
 	});
 	//Cambiar la imagen en el banner
-	$(".Brand").click(function(){
+	$(".Brand").onclick(function(){
 		t = $(this).find("img").attr("src");
 		t = t.replace("img/minis/","");
 		p = t.indexOf(".");
 		t = t.substring(0,p);
 		t = "img/banner/"+t+".jpg";
+
+    console.log("T", t);
 		//Desvanece la foto del banner y manda a cambiaFoto
-		
+
 	});
 }
+
 function cambiaFoto(foto){
-	
+
 }
 </script>
 </head>
@@ -71,7 +79,7 @@ function cambiaFoto(foto){
                 <img class="imagen" src="img/compania01.png" width="183" height="30" alt="compañia 1" />
                 <img class="imagen" src="img/compania02.png" width="72" height="30" alt="compañia 2" />
                 <a class="texto">OFERTAS ESPECIALES</a>
-           	</div>  
+           	</div>
             <div class="bolsa">
                 <div class="titulo">Compras</div>
                 <div class="imagen">
@@ -79,7 +87,7 @@ function cambiaFoto(foto){
                     <div class="texto">Finalizar Compra</div>
                </div>
            	</div>
-            <div class="telefonica"></div> 
+            <div class="telefonica"></div>
     	</div>
 	<div class="encabezado03">
     		<div class="Menu">
@@ -106,8 +114,8 @@ function cambiaFoto(foto){
    	<div class="contenido02">
     	<div class="list_carousel">
 				<ul id="foo0">
-					<li><div class="Brand"><img src="img/brand01.png" width="60" height="60" alt="Brand" /></div></li>
-					<li><div class="Brand"><img src="img/brand02.png" width="60" height="60" alt="Brand" /></div></li>
+					          <li><div class="Brand"><img src="img/brand01.png" width="60" height="60" alt="Brand" /></div></li>
+					          <li><div class="Brand"><img src="img/brand02.png" width="60" height="60" alt="Brand" /></div></li>
                     <li><div class="Brand"><img src="img/brand03.png" width="60" height="60" alt="Brand" /></div></li>
                     <li><div class="Brand"><img src="img/brand04.png" width="60" height="60" alt="Brand" /></div></li>
                     <li><div class="Brand"><img src="img/brand05.png" width="60" height="60" alt="Brand" /></div></li>
@@ -136,7 +144,7 @@ function cambiaFoto(foto){
             <div class="precio">$ 9,999</div>
             <div class="compra"><a href="carrito.html">Comprar</a></div>
         </div>
-        
+
         <div class="producto">
        		<div class="foto"><img src="img/producto.png" width="150" height="200" alt="producto 01" /></div>
         	<div class="descripcionA"><a href="producto.html">Producto 1</a></div>
@@ -144,7 +152,7 @@ function cambiaFoto(foto){
             <div class="precio">$ 9,999</div>
             <div class="compra"><a href="carrito.html">Comprar</a></div>
         </div>
-        
+
         <div class="producto">
        		<div class="foto"><img src="img/producto.png" width="150" height="200" alt="producto 01" /></div>
         	<div class="descripcionA"><a href="producto.html">Producto 1</a></div>
@@ -152,7 +160,7 @@ function cambiaFoto(foto){
             <div class="precio">$ 9,999</div>
             <div class="compra"><a href="carrito.html">Comprar</a></div>
         </div>
-        
+
         <div class="producto">
        		<div class="foto"><img src="img/producto.png" width="150" height="200" alt="producto 01" /></div>
         	<div class="descripcionA"><a href="producto.html">Producto 1</a></div>
@@ -160,7 +168,7 @@ function cambiaFoto(foto){
             <div class="precio">$ 9,999</div>
             <div class="compra"><a href="carrito.html">Comprar</a></div>
         </div>
-        
+
         <div class="producto">
        		<div class="foto"><img src="img/producto.png" width="150" height="200" alt="producto 01" /></div>
         	<div class="descripcionA"><a href="producto.html">Producto 1</a></div>
@@ -168,7 +176,7 @@ function cambiaFoto(foto){
             <div class="precio">$ 9,999</div>
             <div class="compra"><a href="carrito.html">Comprar</a></div>
         </div>
-        
+
         <div class="producto">
        		<div class="foto"><img src="img/producto.png" width="150" height="200" alt="producto 01" /></div>
         	<div class="descripcionA"><a href="producto.html">Producto 1</a></div>
